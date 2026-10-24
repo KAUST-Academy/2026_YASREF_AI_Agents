@@ -1,0 +1,33 @@
+# Lab environment for this course.
+#
+# Every lab runs Qwen3.5-4B in fp16 and needs an NVIDIA GPU with about 16 GB
+# (a free Colab T4 is what they were written for). Each notebook installs what
+# it needs in its first cells, so on Colab nothing here is required.
+#
+# The labs also need internet: they download the model from Hugging Face and
+# fetch their data at runtime (ArSarcasm-v2 from GitHub, GitLab's handbook,
+# arXiv). A local wheelhouse alone does not make them run offline.
+#
+# Versions are left unpinned, as in the notebooks' own install cells, except
+# where a notebook sets a floor. See OFFLINE.md for the `pip download` /
+# `--no-index` install.
+
+numpy
+requests
+pydantic
+
+jupyterlab~=4.2
+ipywidgets~=8.1
+
+torch
+transformers
+accelerate
+sentence-transformers         # Day 2: embeddings
+datasets                      # Day 3: research agent
+
+rank_bm25                     # Days 2, 3: keyword search
+chromadb                      # Days 2, 3: vector store
+pypdf                         # Days 2, 3: reading PDFs
+mcp>=2                        # Day 3: MCP server and client
+arxiv                         # Day 3: research agent
+langgraph>=0.6                # Day 3: the research agent as a graph

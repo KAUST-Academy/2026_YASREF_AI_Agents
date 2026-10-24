@@ -1,0 +1,217 @@
+# =============================================================================
+# AI Agents — course content
+# One week with KAUST Academy for YASREF.
+#
+# This file is the single source of truth for the website. Edit it, run
+# `python3 build.py --check`, and every page is regenerated. Never edit the
+# generated HTML in _site/ — it is deleted and rebuilt every time.
+#
+# Resource `status`:
+#   todo   -> renders greyed out as "Coming soon", not linked, not checked.
+#   ready  -> renders as a button; `file` must exist or --check fails the build.
+#
+# The Day 1 Part 1 deck is LaTeX Beamer; the other decks are PowerPoint,
+# exported to PDF. Re-export after editing a .pptx (File -> Save As -> PDF);
+# the PDF here does not update itself. Hidden slides are left out of the export.
+# =============================================================================
+
+[course]
+title      = "AI Agents"
+title_lead = "AI"
+title_rest = "Agents"
+
+tagline  = "Welcome to the 2026 KAUST Academy YASREF AI Agents Program: five days from a single LLM call to tested multi-agent systems. Here you can find all of the slides and labs."
+client   = "YASREF"
+provider = "KAUST Academy"
+year     = "2026"
+
+# Not confirmed yet. The Day 1 deck is dated 2026-10-18; add the dates and the
+# venue here (YYYY-MM-DD) once they are known.
+# starts   = ""
+# ends     = ""
+# location = ""
+
+# Drives the footer licence link and the Colab URLs below.
+repo         = "KAUST-Academy/2026_YASREF_AI_Agents"
+
+license      = "GPL-3.0"
+license_note = "Recording and uploading lectures online is not permitted."
+
+summary = """
+Five days, each built around a lecture deck and one or two hands-on labs. The
+course starts from prompting a single model and builds up to retrieval, tool-using
+agents, teams of agents with a human in the loop, and how to test and monitor them
+before production. Every lab uses the same open-weight model, Qwen3.5-4B, and runs
+on a free Colab T4 GPU.
+"""
+
+# -----------------------------------------------------------------------------
+# Days
+#
+# Labs are listed in the order they are run. Each lab installs its own packages
+# in its first cells and needs a GPU and internet: it downloads the model from
+# Hugging Face and fetches its data at runtime.
+#
+# Colab URLs: https://colab.research.google.com/github/<repo>/blob/main/<path>
+# -----------------------------------------------------------------------------
+
+[[days]]
+slug  = "day1"
+label = "Day 1"
+title = "LLM Foundations"
+blurb = "Prompting, context and control: how a model reads a prompt, how to get output your code can parse, how sampling and memory work, and how an instruction hidden in the data takes over."
+icon  = "ri-chat-3-line"
+
+  [[days.resources]]
+  name   = "Part 1: Prompting, Context and Grounding"
+  detail = "How an LLM produces text; choosing and running an open-weight model; prompting and structured outputs; sampling; context engineering; grounding answers with retrieval; and the limits of all of these"
+  kind   = "slides"
+  file   = "Slides/Day_1/01_LLM_Foundations_Prompting_Context_and_Grounding.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Part 2: Prompt Engineering, Memory and Control"
+  detail = "Good and bad prompts; roles, system messages and chat templates; zero-shot, few-shot, chain-of-thought, meta-prompting and self-consistency; short-term, semantic and episodic memory and the context window; temperature, top-k and top-p; prompt injection and defenses"
+  kind   = "slides"
+  file   = "Slides/Day_1/02_Prompt_Engineering_Memory_and_Control.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 1: Prompting, Measured"
+  detail = "Test each prompting technique on Arabic tweets labeled for sentiment, sarcasm and dialect (ArSarcasm-v2): vague against specific, zero-shot against few-shot, structured output with validation and retry, and a prompt injection measured with and without a defense."
+  kind   = "lab"
+  file   = "Labs/Day_1/Day1_Prompting_Measured.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_1/Day1_Prompting_Measured.ipynb"
+  status = "ready"
+
+[[days]]
+slug  = "day2"
+label = "Day 2"
+title = "Retrieval-Augmented Generation"
+blurb = "Retrieval, embeddings and evaluation: answering from your own documents with sources, and measuring whether retrieval and generation actually work."
+icon  = "ri-file-search-line"
+
+  [[days.resources]]
+  name   = "RAG: Retrieval, Embeddings and Evaluation"
+  detail = "Why models need retrieval; embeddings and vector similarity; chunking strategies; semantic, keyword and hybrid search, reranking and query routing; building the RAG prompt with citations; query transformation and parent-child chunking; retrieval and generation metrics and building a test set"
+  kind   = "slides"
+  file   = "Slides/Day_2/01_RAG_Retrieval_Embeddings_and_Evaluation.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 1: RAG on a Real Company Handbook"
+  detail = "Build an assistant over 38 pages of GitLab's public handbook that answers with sources and says \"I don't know\" when the documents don't cover a question; compare four chunking strategies and see what metadata filters change."
+  kind   = "lab"
+  file   = "Labs/Day_2/Day2_RAG_Pipeline.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_2/Day2_RAG_Pipeline.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Evaluate Your RAG"
+  detail = "Turn a spot check into an evaluation: build a test set, measure keyword, vector and hybrid retrieval with hit rate and MRR, check answers for correctness and faithfulness, check the LLM judge against your own labels, and report error bars."
+  kind   = "lab"
+  file   = "Labs/Day_2/Day2_RAG_Evaluation.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_2/Day2_RAG_Evaluation.ipynb"
+  status = "ready"
+
+[[days]]
+slug  = "day3"
+label = "Day 3"
+title = "Tools, Loops and Agent Architectures"
+blurb = "From chatbot to agent: tools with contracts, MCP, the agent loop, ReAct, CodeAct, plan-and-execute and Reflexion, and the guardrails an agent needs before it acts."
+icon  = "ri-tools-line"
+
+  [[days.resources]]
+  name   = "AI Agents: Tools, Loops and Architectures"
+  detail = "Levels of agency and when not to build an agent; designing tools, schemas and outputs; MCP; the agent loop and managing state; ReAct, CodeAct, plan-and-execute and Reflexion; prompt injection, guardrails, human approval gates and recovering from errors"
+  kind   = "slides"
+  file   = "Slides/Day_3/01_AI_Agents_Tools_Loops_and_Architectures.pdf"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 1: Build an Agent From Scratch"
+  detail = "No framework: define tools as contracts, parse native tool calls and run the loop with stopping rules, measure how tool descriptions change the model's choices, serve tools from an MCP server, gate the one dangerous tool behind human approval, then attack your own agent with an instruction hidden in an email."
+  kind   = "lab"
+  file   = "Labs/Day_3/Day3_Agent_From_Scratch.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_3/Day3_Agent_From_Scratch.ipynb"
+  status = "ready"
+
+  [[days.resources]]
+  name   = "Lab 2: Research Agent"
+  detail = "Build a deep-research agent over arXiv in six small functions: the model plans searches, picks papers, reads and summarizes them, and decides when it knows enough; code verifies every citation. Ends with the same agent as a LangGraph graph."
+  kind   = "lab"
+  file   = "Labs/Day_3/Day3_Research_Agent.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_3/Day3_Research_Agent.ipynb"
+  status = "ready"
+
+[[days]]
+slug  = "day4"
+label = "Day 4"
+title = "Multi-Agent Systems and Human-in-the-Loop"
+blurb = "When one agent isn't enough: agentic retrieval, orchestration patterns, shared state between agents, approval gates and escalation, and how multi-agent systems fail."
+icon  = "ri-team-line"
+
+  [[days.resources]]
+  name   = "Multi-Agent Systems and Human-in-the-Loop"
+  detail = "From RAG to agentic RAG: query analysis, self-correction and multi-step retrieval; router, supervisor-worker, peer and hybrid orchestration; shared state, structured messages and cost; the trust spectrum, approval gates and escalation; cascading errors, loop detection and mitigation"
+  kind   = "slides"
+  # file = "Slides/Day_4/01_Multi_Agent_Systems_and_Human_in_the_Loop.pdf"
+  status = "todo"
+
+  [[days.resources]]
+  name   = "Lab 1: Agentic RAG and Multi-Agent Patterns"
+  detail = "The Day 4 lecture as runnable code: a query analyzer and self-correcting retriever, router, supervisor-worker and writer-editor patterns, shared state and the context-loss bug, a risk-based approval gate and escalation, and a loop detector, wired together in a small support system."
+  kind   = "lab"
+  # file  = "Labs/Day_4/Day4_AgenticRAG_Solution.ipynb"
+  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_AgenticRAG_Solution.ipynb"
+  status = "todo"
+
+  [[days.resources]]
+  name   = "Lab 2: A Team of Agents"
+  detail = "Triage, two specialists, a writer, a reviewer who is not the writer and a supervisor that enforces a budget and hands cases to a person; then compare the team against one agent with all the tools on cost and correctness."
+  kind   = "lab"
+  # file  = "Labs/Day_4/Day4_Agent_Team_Solution.ipynb"
+  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_Agent_Team_Solution.ipynb"
+  status = "todo"
+
+[[days]]
+slug  = "day5"
+label = "Day 5"
+title = "Testing, Patterns and Production"
+blurb = "How to know an agent works and keep it working: layered testing, LLM judges, observability, advanced patterns, research agents and real-world architectures."
+icon  = "ri-shield-check-line"
+
+  [[days.resources]]
+  name   = "Advanced Agents: Testing, Patterns and Production"
+  detail = "Failure taxonomy, trajectory evaluation and the testing layers from tools to multi-agent handoffs; LLM-as-judge and its calibration; logging, tracing and alerting; debate, hierarchical agents, recursive language models and vectorless RAG; evaluating deep-research agents; production architectures and scaling lessons"
+  kind   = "slides"
+  # file = "Slides/Day_5/01_Advanced_Agents_Testing_Patterns_and_Production.pdf"
+  status = "todo"
+
+  [[days.resources]]
+  name   = "Lab 1: Testing Agents"
+  detail = "Test a tool-using agent for a fictional company: trajectories and golden tests, tool tests, an LLM judge and adversarial cases; add structured logs, a trace waterfall and alerts; add a critic; then test the routing and handoffs of a multi-agent version and fix the bug the original tests missed."
+  kind   = "lab"
+  # file  = "Labs/Day_5/Day5_AgentsTesting_Solution.ipynb"
+  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_5/Day5_AgentsTesting_Solution.ipynb"
+  status = "todo"
+
+  [[days.resources]]
+  name   = "Lab 2 (Capstone): Build Your Own Hermes"
+  detail = "Build a small personal assistant modeled on Nous Research's Hermes Agent, one part at a time: an agent loop with tools, a chat gateway, long-term memory, skills the agent writes itself, scheduled jobs and an orchestrator with workers, then put it behind a live chat interface."
+  kind   = "lab"
+  # file  = "Labs/Day_5/Day5_Hermes_Capstone_Solution.ipynb"
+  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_5/Day5_Hermes_Capstone_Solution.ipynb"
+  status = "todo"
+
+# -----------------------------------------------------------------------------
+# Extra — optional material, on its own page, available all week.
+# Nothing yet. Drop a file in Extra/ and add an [[extra]] block like this:
+#
+#   [[extra]]
+#   name   = "Python Cheat Sheet"
+#   detail = "Quick reference for the Python used across the labs"
+#   kind   = "reference"
+#   file   = "Extra/Python_Cheat_Sheet.pdf"
+#   status = "ready"
+# -----------------------------------------------------------------------------
