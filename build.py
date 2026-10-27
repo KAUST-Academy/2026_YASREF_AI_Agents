@@ -192,6 +192,10 @@ def resource_row(r: dict) -> str:
             btns.append(
                 f'<a href="{e(r["colab"])}" class="table-btn" target="_blank" rel="noopener">Colab</a>'
             )
+        if r.get("github"):
+            btns.append(
+                f'<a href="{e(r["github"])}" class="table-btn" target="_blank" rel="noopener">GitHub</a>'
+            )
         action = " ".join(btns) or '<span style="color: #888;">Coming soon</span>'
 
     return f"""            <tr>
@@ -391,7 +395,9 @@ def check(data: dict) -> int:
             ready += 1
             f = r.get("file")
             if not f:
-                problems.append(f"{label}: '{name}' is ready but has no `file`")
+                # An external repo is the resource itself; there is no file to check.
+                if not r.get("github"):
+                    problems.append(f"{label}: '{name}' is ready but has no `file` or `github`")
             elif not (ROOT / f).exists():
                 problems.append(f"{label}: '{name}' -> missing file {f}")
 

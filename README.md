@@ -37,7 +37,7 @@ need internet: they download the model and fetch their data at runtime.
 ├── theme/               # KAUST Academy theme
 ├── Slides/Day_N/        # lecture PDFs
 ├── Labs/Day_N/          # Jupyter notebooks
-└── Extra/               # optional references (empty for now)
+└── Extra/               # optional references
 ```
 
 ---

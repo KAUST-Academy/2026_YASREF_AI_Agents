@@ -206,12 +206,13 @@ icon  = "ri-shield-check-line"
 
 # -----------------------------------------------------------------------------
 # Extra — optional material, on its own page, available all week.
-# Nothing yet. Drop a file in Extra/ and add an [[extra]] block like this:
-#
-#   [[extra]]
-#   name   = "Python Cheat Sheet"
-#   detail = "Quick reference for the Python used across the labs"
-#   kind   = "reference"
-#   file   = "Extra/Python_Cheat_Sheet.pdf"
-#   status = "ready"
+# Drop a file in Extra/ and set `file`, or link a repo with `github` instead
+# (it needs internet, like the Colab links).
 # -----------------------------------------------------------------------------
+
+[[extra]]
+name   = "LocalRAG: Ask Your Documents"
+detail = "The Day 2 RAG lab as a Windows program: build a vector database from a folder of documents, choose an embedding model and a local language model (Qwen3.5-4B by default), and get answers with citations, with the retrieved passages, the prompt and the timings on screen. Includes a guide to turning a Python lab into an .exe."
+kind   = "code"
+github = "https://github.com/KAUST-Academy/LocalRAG"
+status = "ready"
