@@ -155,8 +155,8 @@ icon  = "ri-team-line"
   name   = "Multi-Agent Systems and Human-in-the-Loop"
   detail = "From RAG to agentic RAG: query analysis, self-correction and multi-step retrieval; router, supervisor-worker, peer and hybrid orchestration; shared state, structured messages and cost; the trust spectrum, approval gates and escalation; cascading errors, loop detection and mitigation"
   kind   = "slides"
-  # file = "Slides/Day_4/01_Multi_Agent_Systems_and_Human_in_the_Loop.pdf"
-  status = "todo"
+  file   = "Slides/Day_4/01_Multi_Agent_Systems_and_Human_in_the_Loop.pdf"
+  status = "ready"
 
   [[days.resources]]
   name   = "Lab 1: Agentic RAG and Multi-Agent Patterns"
