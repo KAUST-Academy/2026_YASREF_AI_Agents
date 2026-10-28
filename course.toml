@@ -162,17 +162,17 @@ icon  = "ri-team-line"
   name   = "Lab 1: Agentic RAG and Multi-Agent Patterns"
   detail = "The Day 4 lecture as runnable code: a query analyzer and self-correcting retriever, router, supervisor-worker and writer-editor patterns, shared state and the context-loss bug, a risk-based approval gate and escalation, and a loop detector, wired together in a small support system."
   kind   = "lab"
-  # file  = "Labs/Day_4/Day4_AgenticRAG_Solution.ipynb"
-  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_AgenticRAG_Solution.ipynb"
-  status = "todo"
+  file   = "Labs/Day_4/Day4_AgenticRAG.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_AgenticRAG.ipynb"
+  status = "ready"
 
   [[days.resources]]
   name   = "Lab 2: A Team of Agents"
   detail = "Triage, two specialists, a writer, a reviewer who is not the writer and a supervisor that enforces a budget and hands cases to a person; then compare the team against one agent with all the tools on cost and correctness."
   kind   = "lab"
-  # file  = "Labs/Day_4/Day4_Agent_Team_Solution.ipynb"
-  # colab = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_Agent_Team_Solution.ipynb"
-  status = "todo"
+  file   = "Labs/Day_4/Day4_Agent_Team.ipynb"
+  colab  = "https://colab.research.google.com/github/KAUST-Academy/2026_YASREF_AI_Agents/blob/main/Labs/Day_4/Day4_Agent_Team.ipynb"
+  status = "ready"
 
 [[days]]
 slug  = "day5"
